@@ -22,7 +22,7 @@ var getUserData = function(username) {
       }
     }
     var mostUsed = languages.getKeyByValue( max );
-    $('#languages').append("<li>" + mostUsed + "</li>");
+    $('#languages').append("<h2>Hi <span>" + username + "</span>, your most used language is <span>" + mostUsed + "</span>.</h2>");
   });
 }
 
@@ -30,8 +30,8 @@ $(document).ready(function(){
   $(document).on('keypress', '#username', function(e){
     if (e.which == 13) {
       var username = $(this).val();
+      $('#username').val("");
       getUserData(username);
-      $('#username').empty();
     }
   })
 });
